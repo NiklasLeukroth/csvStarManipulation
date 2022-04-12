@@ -1,6 +1,6 @@
 # First Steps
 First clone the repo, for example using "git clone https://github.com/Ranplax/csvStarManipulation.git"\
-After that, make sure the submodule is included using "git submodule update --init --recursive" and after that "git submodule update --recursive"\
+After that, make sure the submodule is included using "git submodule update --init --recursive" and after that "git submodule update --recursive"
 
 # Usage
 The results will be stored in a seperate CSV Folder that is created upon running any of the scripts
