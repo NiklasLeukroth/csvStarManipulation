@@ -1,5 +1,5 @@
 # First Steps
-First clone the repo, for example using "git clone https://github.com/Ranplax/csvStarManipulation.git"\
+First clone the repo, for example using "git clone https://github.com/Ranplax/csvStarManipulation.git" \
 After that, make sure the submodule is included using "git submodule update --init --recursive" and after that "git submodule update --recursive"
 
 # Usage
