@@ -3,7 +3,7 @@ First clone the repo, for example using "git clone https://github.com/Ranplax/cs
 After that, make sure the submodule is included using "git submodule update --init --recursive" and after that "git submodule update --recursive"
 
 # Usage
-The results will be stored in a seperate CSV Folder that is created upon running any of the scripts
+The results will be stored in a seperate CSV Folder or JSON Folder that is created upon running any of the scripts
 ## filterStars.py
 Upon opening the script, it first asks you to enter the relative file path fo the csv file that is to be filtered\
 Done
