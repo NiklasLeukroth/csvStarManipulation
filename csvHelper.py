@@ -28,18 +28,3 @@ def writeToCSVFile(data, file):
 
 
 	file.close()
-
-
-def createNewCSVFile(path, fileName, fileEnding):
-	pathToCheck = path + fileName + fileEnding
-	if util.checkIfAvailable(pathToCheck):
-		file = open(pathToCheck, 'w', newline = '')
-		return file
-
-	for i in range(100):
-		pathToCheck = path + fileName + str(i) + fileEnding
-		if util.checkIfAvailable(pathToCheck):
-			file = open(pathToCheck, 'w', newline = '')
-			return file
-
-	return None

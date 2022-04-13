@@ -35,7 +35,7 @@ def main():
 		return
 
 	sampled = sample(data, n, length)
-	file = csvHelper.createNewCSVFile(resultPath, resultName, ".csv")
+	file = util.createNewFile(resultPath, resultName, ".csv")
 	if file == None:
 		print("to many csv files already in ../CSV/")
 		return

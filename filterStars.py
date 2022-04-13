@@ -21,7 +21,7 @@ def main():
 
 	filtered = filter(data)
 
-	file = csvHelper.createNewCSVFile(resultPath, resultName, ".csv")
+	file = util.createNewFile(resultPath, resultName, ".csv")
 	if file == None:
 		print("to many csv files already in ../CSV/")
 		return
@@ -31,7 +31,7 @@ def main():
 def filter(data):
 	result = []
 	for row in data:
-		if float(row[12]) <= 6.5:
+		if float(row[13]) <= 6.5:
 			result.append(row)
 
 	return result
