@@ -31,7 +31,7 @@ def main():
 def filter(data):
 	result = []
 	for row in data:
-		if float(row[12]) >= 6.5:
+		if float(row[12]) <= 6.5:
 			result.append(row)
 
 	return result
