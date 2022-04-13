@@ -6,11 +6,11 @@ After that, make sure the submodule is included using "git submodule update --in
 The results will be stored in a seperate CSV Folder that is created upon running any of the scripts
 ## filterStars.py
 Upon opening the script, it first asks you to enter the relative file path fo the csv file that is to be filtered\
-After that it asks you how many stars you want in your sample\
 Done
 ## sampleStars.py
 Upon opening the script, it first asks you to enter the relative file path fo the csv file that is to be sampled\
 After that it asks you how many stars you want in your sample\
 Done
 ## csvStarsToJSON.py
-Not implemented yet
+Upon opening the script, it first asks you to enter the relative file path fo the csv file that is to be converted\
+Done
