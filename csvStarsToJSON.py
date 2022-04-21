@@ -1,6 +1,7 @@
 import util
 import csvHelper
 import json
+import math
 
 
 def main():
@@ -31,26 +32,57 @@ def main():
 
 
 def convertCSVToJSON(data):
-	stars = []
 
-	for star in data:
-		lat, lon = util.getLatAndLongFromStar(star)
-		name = star[6]
-		magnitude = star[13]
-
-		tmpDic = {}
-		tmpDic['lat'] = lat
-		tmpDic['long'] = lon
-		tmpDic['name'] = name
-		tmpDic['magnitude'] = magnitude
-
-		stars.append(tmpDic)
+	objects = createObjects(data)
+	materials = createMaterials(objects)
 
 
 	result = {}
-	result['stars'] = stars
+	result['objects'] = objects
+	result['materials'] = materials
 	return result
 
+
+def createObjects(data):
+	objects = []
+	counter = 0
+
+	for star in data:
+		lat, lon = util.getLatAndLongFromStar(star)
+		position = [math.cos(lat) * math.cos(lon), math.cos(lat) * math.sin(lon), math.sin(lat)]
+		name = star[6]
+		if name == "":
+			name = "star" + str(counter)
+			counter += 1
+		magnitude = star[13]
+
+		tmpDic = {}
+		tmpDic['position'] = position
+		tmpDic['name'] = name
+		tmpDic['magnitude'] = magnitude
+
+		objects.append(tmpDic)
+
+	return objects
+
+
+def createMaterials(objects):
+	materials = []
+
+	for entry in objects:
+		name = entry['name']
+
+		tmpDic = {}
+		tmpDic['emission_enabled'] = True
+		tmpDic['emission_energy'] = 3
+		tmpDic['name'] = name
+		tmpDic['emission'] = [255,255,255]
+		tmpDic['use_as_albedo'] = True
+
+		materials.append(tmpDic)
+
+
+	return materials
 
 
 def writeToJSONFile(jsonDict, file):
