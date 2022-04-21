@@ -35,11 +35,16 @@ def convertCSVToJSON(data):
 
 	objects = createObjects(data)
 	materials = createMaterials(objects)
+	geometry = createGeometry(objects)
+	config = {}
+	config['modelDir'] = "geometry/solarSystem/stars/"
 
 
 	result = {}
 	result['objects'] = objects
 	result['materials'] = materials
+	result['geometries'] = geometry
+	result['config'] = config
 	return result
 
 
@@ -59,7 +64,9 @@ def createObjects(data):
 		tmpDic = {}
 		tmpDic['position'] = position
 		tmpDic['name'] = name
-		tmpDic['magnitude'] = magnitude
+		tmpDic['magnitude'] = float(magnitude)
+		tmpDic['geometry'] = "star"
+		tmpDic['scale'] = [1,1,1]
 
 		objects.append(tmpDic)
 
@@ -78,11 +85,26 @@ def createMaterials(objects):
 		tmpDic['name'] = name
 		tmpDic['emission'] = [255,255,255]
 		tmpDic['use_as_albedo'] = True
+		tmpDic['material'] = name
 
 		materials.append(tmpDic)
 
 
 	return materials
+
+
+def createGeometry(objects):
+	geometry = []
+
+
+	tmpDic = {}
+	tmpDic['name'] = "star"
+	tmpDic['type'] = "mesh"
+	tmpDic['path'] = "star.glb"
+
+	geometry.append(tmpDic)
+
+	return geometry
 
 
 def writeToJSONFile(jsonDict, file):
