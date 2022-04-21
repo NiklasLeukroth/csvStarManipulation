@@ -67,6 +67,7 @@ def createObjects(data):
 		tmpDic['magnitude'] = float(magnitude)
 		tmpDic['geometry'] = "star"
 		tmpDic['scale'] = [1,1,1]
+		tmpDic['material'] = name
 
 		objects.append(tmpDic)
 
@@ -85,7 +86,6 @@ def createMaterials(objects):
 		tmpDic['name'] = name
 		tmpDic['emission'] = [255,255,255]
 		tmpDic['use_as_albedo'] = True
-		tmpDic['material'] = name
 
 		materials.append(tmpDic)
 
