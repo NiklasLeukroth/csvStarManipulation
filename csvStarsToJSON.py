@@ -79,16 +79,24 @@ def createMaterials(objects):
 
 	for entry in objects:
 		name = entry['name']
+		magnitude = float(entry['magnitude'])
+
+		#the lowest magnitude in the set is -1.44
+		#the highest magnitude in the set is 6.5
+		#the highest possible emmision is supposed to be 3, hence /2.65 => 7.94/2.65 ~ 3
+
+		magnitude += 1.44
+		magnitude =  7.94 - magnitude
+		magnitude = magnitude / 2.65
 
 		tmpDic = {}
 		tmpDic['emission_enabled'] = True
-		tmpDic['emission_energy'] = 3
+		tmpDic['emission_energy'] = magnitude
 		tmpDic['name'] = name
 		tmpDic['emission'] = [255,255,255]
 		tmpDic['use_as_albedo'] = True
 
 		materials.append(tmpDic)
-
 
 	return materials
 
