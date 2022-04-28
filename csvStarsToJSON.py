@@ -53,8 +53,9 @@ def createObjects(data):
 	counter = 0
 
 	for star in data:
+		radius = 3000
 		lat, lon = util.getLatAndLongFromStar(star)
-		position = [math.cos(lat) * math.cos(lon), math.cos(lat) * math.sin(lon), math.sin(lat)]
+		position = [radius * math.cos(lat) * math.cos(lon), radius * math.cos(lat) * math.sin(lon), radius * math.sin(lat)]
 		name = star[6]
 		if name == "":
 			name = "star" + str(counter)
@@ -64,7 +65,7 @@ def createObjects(data):
 		tmpDic = {}
 		tmpDic['position'] = position
 		tmpDic['name'] = name
-		tmpDic['magnitude'] = float(magnitude)
+		tmpDic['magnitude'] = magnitude
 		tmpDic['geometry'] = "star"
 		tmpDic['scale'] = [1,1,1]
 		tmpDic['material'] = str(name + "_material")
@@ -87,7 +88,8 @@ def createMaterials(objects):
 
 		magnitude += 1.44
 		magnitude =  7.94 - magnitude
-		magnitude = magnitude / 2.65
+		magnitude = 0.1 + round(magnitude / 2.65, 2)
+		#magnitude = 0.1 + round(magnitude / 5, 2)
 
 		tmpDic = {}
 		tmpDic['emission_enabled'] = True
