@@ -69,6 +69,7 @@ def createObjects(data):
 		tmpDic['geometry'] = "star"
 		tmpDic['scale'] = [1,1,1]
 		tmpDic['material'] = str(name + "_material")
+		tmpDic['color'] = [round(i / 255, 3) for i in convertBVToRG(star[16])]
 
 		objects.append(tmpDic)
 
@@ -88,14 +89,15 @@ def createMaterials(objects):
 
 		magnitude += 1.44
 		magnitude =  7.94 - magnitude
-		magnitude = 0.1 + round(magnitude / 2.65, 2)
-		#magnitude = 0.1 + round(magnitude / 5, 2)
+		#magnitude = 0.1 + round(magnitude / 2.65, 3)
+		magnitude = 0.1 + round(magnitude / 10, 3)
 
 		tmpDic = {}
 		tmpDic['emission_enabled'] = True
 		tmpDic['emission_energy'] = magnitude
 		tmpDic['name'] = str(name + "_material")
-		tmpDic['emission'] = [255,255,255]
+		tmpDic['emission'] = entry['color']
+		entry.pop('color')
 		tmpDic['use_as_albedo'] = True
 
 		materials.append(tmpDic)
@@ -123,5 +125,26 @@ def writeToJSONFile(jsonDict, file):
 
     file.close()
 
+
+def convertBVToRG(bvIndex):
+	if bvIndex == '':
+		return [255,255,255]
+	bvIndex = float(bvIndex)
+
+	#Colors based on http://www.science-bbs.com/16-astro/f276016b19867881.htm
+	#bluish white
+	if bvIndex < 0.0:
+		return [219, 235, 245]
+	#pure white
+	if bvIndex < 0.3:
+		return [245 ,245 ,245]
+	#yellowish white
+	if bvIndex < 1.0:
+		return [240 ,243 ,177]
+	#orangeish white
+	if bvIndex < 1.5:
+		return [243 ,219 ,165]
+	#Redish white
+	return [243 ,190 ,165]
 
 main()
