@@ -1,3 +1,6 @@
 [submodule "HYG-Database"]
 	path = HYG-Database
 	url = https://github.com/astronexus/HYG-Database.git
+[submodule "blank"]
+	path = blank
+	url = https://github.com/kevinmatthes/blank
