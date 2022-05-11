@@ -212,7 +212,7 @@ references:
     title: HYG-Database
     authors:
       - alias: astronexus
-    data-released: 2019-03-07
+    date-released: 2019-03-07
     url: https://github.com/astronexus/HYG-Database
     commit: 64a136923f79a657dfe83fa1795f9f4ad1a1bcae
 
