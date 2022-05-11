@@ -214,6 +214,7 @@ references:
     commit: 64a136923f79a657dfe83fa1795f9f4ad1a1bcae
     date-released: 2019-03-07
     license: CC-BY-SA-2.5
+    repository-artifact: https://github.com/astronexus/HYG-Database
     title: HYG-Database
     url: https://github.com/astronexus/HYG-Database
 
