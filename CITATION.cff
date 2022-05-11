@@ -217,9 +217,7 @@ references:
     repository-artifact: https://github.com/astronexus/HYG-Database
     title: HYG-Database
     url: https://github.com/astronexus/HYG-Database
-
-################################################################################
-  - type: generic
+  - type: software-code
     date-released: 2022-05-11
     version: 0.0.3
     abstract: A collection of initialised source file templates.
@@ -230,9 +228,9 @@ references:
     repository-artifact: https://github.com/kevinmatthes/blank
     title: blank
     url: https://github.com/kevinmatthes/blank
-  - type: generic
-    date-released: 2022-05-09
-    version: 0.1
+  - type: software
+    date-released: 2022-05-11
+    version: 0.3
     abstract: A simple CLI to extract citation information from a CITATION.cff.
     authors:
       - family-names: Matthes
@@ -241,3 +239,5 @@ references:
     repository-code: https://github.com/kevinmatthes/cffreference
     title: cffreference
     url: https://github.com/kevinmatthes/cffreference
+
+################################################################################
