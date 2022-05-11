@@ -208,7 +208,7 @@ references:
     repository-artifact: https://github.com/kevinmatthes/docs-snippets
     title: docs-snippets
     url: https://github.com/kevinmatthes/docs-snippets
-  - type: dataset
+  - type: database
     title: HYG-Database
     authors:
       - alias: astronexus
