@@ -43,9 +43,9 @@ version: 0.0.0
 # Project information.
 abstract: Repository to collect useful Python scripts to filter and sample a CSV star file.
 authors:
-  - family-names: Leukroth
+  - email: niklasleukroth@gmail.com
+    family-names: Leukroth
     given-names: Niklas
-    email: niklasleukroth@gmail.com
   - family-names: Matthes
     given-names: Kevin
 license: GPL-2.0
