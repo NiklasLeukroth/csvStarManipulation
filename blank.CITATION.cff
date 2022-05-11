@@ -1,6 +1,6 @@
 ######################## GNU General Public License 2.0 ########################
 ##                                                                            ##
-## Copyright (C) 2022 Kevin Matthes                                           ##
+## Copyright (C) 2022 Niklas Leukroth, Kevin Matthes                          ##
 ##                                                                            ##
 ## This program is free software; you can redistribute it and/or modify       ##
 ## it under the terms of the GNU General Public License as published by       ##
@@ -20,7 +20,8 @@
 
 ################################################################################
 ##
-##  AUTHOR      Kevin Matthes
+##  AUTHOR      Niklas Leukroth
+##              Kevin Matthes
 ##  BRIEF       Citation settings for the Git repository.
 ##  COPYRIGHT   (C) 2022 Kevin Matthes.
 ##              This file is licensed GPL 2 as of June 1991.
@@ -33,21 +34,24 @@
 
 # Parser settings.
 cff-version: 1.2.0
-message: Please cite this software using these meta data.
+message: If you use this software, please cite as below.
 
 # Version information.
-date-released: YYYY-MM-DD
+date-released: 2022-05-11
 version: 0.0.0
 
 # Project information.
-abstract: .
+abstract: Repository to collect useful Python scripts to filter and sample a CSV star file.
 authors:
-  - family-names: .
-    given-names: .
+  - family-names: Leukroth
+    given-names: Niklas
+    email: niklasleukroth@gmail.com
+  - family-names: Matthes
+    given-names: Kevin
 license: GPL-2.0
-repository-code: .
-title: .
-url: .
+repository-code: https://github.com/Ranplax/csvStarManipulation
+title: csvStarManipulation
+url: https://github.com/Ranplax/csvStarManipulation
 
 # References.
 references:
