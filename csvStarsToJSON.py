@@ -69,7 +69,8 @@ def createObjects(data):
 		tmpDic['geometry'] = "star"
 		tmpDic['scale'] = [1,1,1]
 		tmpDic['material'] = str(name + "_material")
-		tmpDic['color'] = [round(i / 255, 3) for i in convertBVToRG(star[16])]
+		tmpDic['color'] = [round(i / 255, 3) for i in convertBVToRGB(star[16])]
+		#tmpDic['multimesh'] = True
 
 		objects.append(tmpDic)
 
@@ -126,7 +127,7 @@ def writeToJSONFile(jsonDict, file):
     file.close()
 
 
-def convertBVToRG(bvIndex):
+def convertBVToRGB(bvIndex):
 	if bvIndex == '':
 		return [255,255,255]
 	bvIndex = float(bvIndex)
