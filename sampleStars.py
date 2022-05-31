@@ -47,6 +47,7 @@ def main():
 def sample(data, n, length):
 	indexList = []
 	resultList = []
+	resultList.append('')
 
 	for i in range(n):
 		rand = -1 
